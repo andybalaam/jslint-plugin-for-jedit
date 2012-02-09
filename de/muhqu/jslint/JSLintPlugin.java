@@ -43,7 +43,7 @@ public class JSLintPlugin extends EBPlugin
 			BufferUpdate bu = (BufferUpdate)ebmess;
 			if (bu.getWhat() == BufferUpdate.SAVED) {
 				if(jEdit.getBooleanProperty("jslint.runonsave", false)) {
-					run(bu.getView());
+					run(bu.getBuffer());
 				}
 			}
 		}
@@ -51,7 +51,7 @@ public class JSLintPlugin extends EBPlugin
 			EditPaneUpdate epu = (EditPaneUpdate)ebmess;
 			if (epu.getWhat() == EditPaneUpdate.BUFFER_CHANGED) {
 				if(jEdit.getBooleanProperty("jslint.runonbufferswitch", false)) {
-					run(epu.getEditPane().getView());
+					run(epu.getEditPane().getBuffer());
 				}
 			}
 		}
@@ -81,16 +81,23 @@ public class JSLintPlugin extends EBPlugin
 		return sb.toString();
 	}
 
-	public static void runJSLint(View view)
+	public static void runJSLintOnAll(View view)
 	{
-		me.run(view);
+		for(Buffer buffer : jEdit.getBuffers())
+		{
+			me.run(buffer);
+		}
 	}
 
-	public void run(View view)
+	public static void runJSLint(View view)
+	{
+		me.run(view.getBuffer());
+	}
+
+	public void run(Buffer buffer)
 	{
 		try
 		{
-			Buffer buffer = view.getBuffer();
 			boolean needtorun = needToRunOnBuffer(buffer);
 			if (needtorun)
 			{

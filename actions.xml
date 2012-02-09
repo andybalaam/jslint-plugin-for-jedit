@@ -7,6 +7,11 @@
 			de.muhqu.jslint.JSLintPlugin.runJSLint(view);
 		</CODE>
 	</ACTION>
+	<ACTION NAME="jslint.runjslint-on-all">
+		<CODE>
+			de.muhqu.jslint.JSLintPlugin.runJSLintOnAll(view);
+		</CODE>
+	</ACTION>
 	<ACTION NAME="jslint.toggle-runjslint-on-save">
 		<CODE>
 			jEdit.setBooleanProperty("jslint.runonsave", !jEdit.getBooleanProperty("jslint.runonsave"));

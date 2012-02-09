@@ -17,10 +17,12 @@ plugin.de.muhqu.jslint.JSLintPlugin.jars=js.jar js-engine.jar
 
 
 plugin.de.muhqu.jslint.JSLintPlugin.menu.label=JSLint
-plugin.de.muhqu.jslint.JSLintPlugin.menu=jslint.runjslint - \
+plugin.de.muhqu.jslint.JSLintPlugin.menu=jslint.runjslint \
+	jslint.runjslint-on-all - \
 	jslint.toggle-runjslint-on-save \
 	jslint.toggle-runjslint-on-switch
 jslint.runjslint.label=Run JSLint on active buffer
+jslint.runjslint-on-all.label=Run JSLint on all open buffers
 jslint.toggle-runjslint-on-save.label=Toggle run JSLint on save
 jslint.toggle-runjslint-on-switch.label=Toggle run JSLint on buffer switch
 
