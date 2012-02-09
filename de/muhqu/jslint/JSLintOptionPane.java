@@ -20,6 +20,7 @@ public class JSLintOptionPane extends AbstractOptionPane
 	private ButtonGroup preSelectBtnGroup = new ButtonGroup();
 	
 	private JTextField txt_buffermodes;
+	private JTextField txt_predef;
 	private JCheckBox chk_runOnSave;
 	private JCheckBox chk_runOnSwitch;
 	
@@ -69,6 +70,8 @@ public class JSLintOptionPane extends AbstractOptionPane
 	{
 		jEdit.setProperty("jslint.buffermodes",
 			txt_buffermodes.getText());
+		jEdit.setProperty("jslint.predef",
+			txt_predef.getText());
 		jEdit.setBooleanProperty("jslint.runonsave",
 			chk_runOnSave.isSelected());
 		jEdit.setBooleanProperty("jslint.runonbufferswitch",
@@ -91,7 +94,15 @@ public class JSLintOptionPane extends AbstractOptionPane
 		);
 		pnlBuffermodes.add(txt_buffermodes);
 		pnlGeneral.add(pnlBuffermodes);
-		
+
+		JPanel pnlPredef = new JPanel(new GridLayout(0, 2));
+		pnlPredef.add(new JLabel("Predefined objects (separated by commas)"));
+		txt_predef = new JTextField(
+			jEdit.getProperty("jslint.predef", "")
+		);
+		pnlPredef.add(txt_predef);
+		pnlGeneral.add(pnlPredef);
+
 		chk_runOnSave = new JCheckBox(
 			"Run JSLint on Buffer save",
 			jEdit.getBooleanProperty("jslint.runonsave")

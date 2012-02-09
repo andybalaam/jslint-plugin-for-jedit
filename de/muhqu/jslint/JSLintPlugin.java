@@ -141,6 +141,18 @@ public class JSLintPlugin extends EBPlugin
 						}
 						catch (NoSuchElementException e) {
 						}
+
+						String predef = jEdit.getProperty("jslint.predef", "");
+						if( predef.length() > 0 )
+						{
+							String[] predefSplit = predef.split(",");
+							Object[] predefArray = Arrays.copyOf(
+								predefSplit,
+								predefSplit.length,
+								Object[].class);
+							jsOpt.put("predef", jsOpt, cx.newArray( jsOpt, predefArray ) );
+						}
+
 						//System.out.println("jsOpt: "+Context.toString(jsOpt));
 						//System.out.println("eqeqeq: "+Context.toString(jsOpt.get("eqeqeq", scope)));
 						
