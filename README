@@ -1,36 +1,43 @@
 
- JSLint plugin for jEdit
- ================================ = = =  -  -
+JSLint plugin for jEdit
+=======================
 
- INSTALL
+INSTALL
 
-   1. Copy the "JSLint.jar", from this relese in the same folder as the
-      other jEdit plugins.
-        e.g. cd %USERPROFILE%\.jedit\jars
-		
-   2. Open jEdit -> Plugins -> Plugin Manager...
-      there you need to check, both jar files (js.jar and JSLint.jar)
-
-   3. Open jEdit -> Plugins -> Plugin Options... -> JSLint
-      change some settings, if you like...
+Choose "Plugin Manager..." in jEdit's Plugins menu.  On the "Install" tab,
+Choose JSLintPlugin
 
 
- THANKS
+MANUAL INSTALL
 
-     Big Thanks to Douglas Crockford (www.crockford.com) for giving us
-     JSLint! ...and of course for inventing JSON (www.json.org).
+1. Copy JSLint.jar into your jEdit "jars" folder, which is normally at
+   %USERPROFILE%\.jedit\jars or $HOME/.jedit/jars
 
-     Thanks to Jiger Patel for the jEdit plugin 'CodeLint' which I used
-     as a basis for this plugin.
+2. Open jEdit, and choose "Plugin Manager..." on the Plugins menu.
+   Check the box next to JSLint.jar.
 
 
- COPYRIGHTS
+CONFIGURATION
 
-     JSLint plugin for jEdit
-        Copyright (c) 2008 Mathias Leppich (www.muhqu.de)
-        Copyright (c) 2012 Andy Balaam (www.artificialworlds.net)
+In jEdit, choose "Plugin Options..." from the Plugins menu.  Select JSLint in
+the tree view and modify options as required.
 
-     jslint.js
-        Copyright (c) 2002-2008 Douglas Crockford  (www.JSLint.com)
+
+THANKS
+
+Thank you to Douglas Crockford (www.crockford.com) for JSLint.
+
+Thank you to Jiger Patel for the jEdit plugin 'CodeLint' which was used as a
+basis when this plugin was developed.
+
+
+COPYRIGHT
+
+JSLint plugin for jEdit
+    Copyright (c) 2008 Mathias Leppich (www.muhqu.de)
+    Copyright (c) 2012 Andy Balaam (www.artificialworlds.net)
+
+jslint.js
+     Copyright (c) 2002-2008 Douglas Crockford  (www.JSLint.com)
 
 
