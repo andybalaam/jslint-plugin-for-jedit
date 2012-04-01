@@ -82,7 +82,7 @@ SOFTWARE.
 
 "use strict";
 
-JSLINT = function () {
+var JSLINT = function () {
     var adsafe_id,      // The widget's ADsafe id.
         adsafe_may,     // The widget may load approved scripts.
         adsafe_went,    // ADSAFE.go has been called.
@@ -588,7 +588,6 @@ JSLINT = function () {
 
         widget = {
             alert                   : true,
-            appleScript             : true,
             animator                : true,
             appleScript             : true,
             beep                    : true,
