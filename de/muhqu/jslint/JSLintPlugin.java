@@ -103,8 +103,9 @@ public class JSLintPlugin extends EBPlugin
 			{
 				String jslintsource = inputStreamAsString(this.getClass().getResourceAsStream("/jslint.js"));
 				//System.out.println("Got JSLint Source: " + jslintsource);
-				
-				String sourcepath = buffer.getPath();
+
+				String sourcepath = buffer.getSymlinkPath();
+
 				String jssource = buffer.getText(0,buffer.getLength());
 				//System.out.println("Got Clean Source: " + cleanjssource);
 				
